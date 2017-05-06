@@ -1,0 +1,28 @@
+﻿body {
+    margin: 0;
+    background-color: #333441;
+    overflow-y:hidden;
+
+}
+body.overflow-auto{
+    overflow-y:auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    height:100%;
+}
+.fadeTo{display:none}
+.fadeIn {
+    margin-top: 0;
+    opacity: 1 ;
+    @include transition('margin-top ease-in-out .25s,opacity ease-in-out .25s');
+}
+.fadeIn.vertical {
+    margin-top: 100px !important;
+    opacity: 0;
+    
+}

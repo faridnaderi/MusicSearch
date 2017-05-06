@@ -1,0 +1,194 @@
+﻿.search-section {
+    text-align: center;
+    background-color: #383a49;
+
+    .search-input-container {
+        background-color: #333441;
+        padding: 20px 0;
+
+        > .container > div {
+            height: 48px;
+            border-radius: 100px;
+            background-color: #fff;
+            margin: auto;
+            max-width: 500px;
+            width: 90%;
+            text-align: left;
+            padding: 0 120px 0 20px;
+            position: relative;
+            @include transition(all ease-in-out .25s);
+
+            input {
+                border: 0;
+                background-color: transparent;
+                font-size: 16px;
+                text-align: left;
+                direction: ltr;
+                padding: 13px 0;
+                color: #555;
+                width: 100%;
+                margin-top: 2px;
+            }
+
+            input:focus {
+                border: none !important
+            }
+
+            button {
+                position: absolute;
+                right: 5px;
+                color: #fff;
+                background-color: #D05D84;
+                border: 0;
+                border-radius: 100px;
+                padding: 10px 25px;
+                top: 4px;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+        }
+
+        > .container > div.small {
+            width: 0px;
+            padding-left: 4px;
+
+            input {
+                display: none
+            }
+        }
+    }
+
+
+    .search-results-container {
+        min-height: 300px;
+
+        .empty {
+            color: #474958;
+            font-size: 22px;
+            padding: 50px;
+
+            img {
+                max-width: 150px;
+            }
+        }
+
+        .container {
+            padding: 50px;
+            display: inline-block;
+        }
+
+        .item-box {
+            float: left;
+            width: 320px;
+            height: 320px;
+            overflow: hidden;
+            margin: 20px;
+            position: relative;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #222;
+            @include transition( all ease-in-out .25s);
+
+            .image {
+                background: no-repeat center center #333441;
+                background-size: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 40px;
+                @include transition(all ease-in-out .25s);
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(26, 16, 39, 0.45);
+                border-radius: 5px 5px 0 0;
+                opacity: 1;
+                @include transition(opacity ease-in-out .25s);
+            }
+
+            .overlay-image {
+                opacity: 0;
+                @include transition(opacity ease-in-out .25s);
+                text-align: center;
+                color: #fff;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 40px;
+                padding-top: 70px;
+                background-color: rgba(0,0,0,0.6);
+                font-family: RalewayMedium;
+
+                img {
+                    width: 120px;
+                }
+            }
+
+            .title {
+                img {
+                    position: absolute;
+                    left: 10px;
+                    top: -50px;
+                    width: 35px;
+                    opacity: 1;
+                    @include transition(opacity ease-in-out .25s);
+                }
+
+                img.album {
+                    width: 50px
+                }
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                background-color: #fff;
+                text-align: left;
+                font-family: RalewayMedium;
+                border-radius: 0 0 5px 5px;
+            }
+        }
+
+        .item-box:hover {
+            border-radius: 40px;
+            cursor: pointer;
+
+            .image {
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: blur(5px);
+            }
+
+            .overlay {
+                opacity: 0
+            }
+
+            .overlay-image {
+                opacity: 1
+            }
+
+            .title img {
+                opacity: 0
+            }
+        }
+
+        .view-more-button {
+            color: #fff;
+            background-color: #d05d84;
+            border: 0;
+            border-radius: 100px;
+            padding: 10px 25px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+    }
+}

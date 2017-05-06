@@ -1,0 +1,8 @@
+﻿@mixin animation($value) {
+    animation: $value;
+    -webkit-animation: $value;
+}
+@mixin transition($value) {
+    transition: $value;
+    -webkit-transition: $value;
+}

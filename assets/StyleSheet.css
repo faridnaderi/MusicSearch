@@ -1,0 +1,253 @@
+﻿@font-face {
+  font-family: RalewayRegular;
+  src: url(../../assets/fonts/Raleway-Regular.ttf); }
+
+@font-face {
+  font-family: RalewayMedium;
+  src: url(../../assets/fonts/Raleway-Medium.ttf); }
+
+body, button, input {
+  font-family: RalewayRegular; }
+
+strong, h1, h2, h3, h4, h5, h6 {
+  font-family: RalewayMedium; }
+
+body {
+  margin: 0;
+  background-color: #333441;
+  overflow-y: hidden; }
+
+body.overflow-auto {
+  overflow-y: auto; }
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  position: relative;
+  height: 100%; }
+
+.fadeTo {
+  display: none; }
+
+.fadeIn {
+  margin-top: 0;
+  opacity: 1;
+  transition: "margin-top ease-in-out .25s,opacity ease-in-out .25s";
+  -webkit-transition: "margin-top ease-in-out .25s,opacity ease-in-out .25s"; }
+
+.fadeIn.vertical {
+  margin-top: 100px !important;
+  opacity: 0; }
+
+/*// Needs latest Compass, add '@import "compass"' to your scss
+// Permalink - use to edit and share this gradient:
+// http://colorzilla.com/gradient-editor/#ce4283+0,b3455d+100
+background-color: #ce4283
+; // Old browsers
+@include filter-gradient(#ce4283, #b3455d, vertical); // IE6-9
+@include background-image(linear-gradient(top, #ce4283 0%,#b3455d 100%));*/
+.banner {
+  background: #b3455d;
+  background: -webkit-linear-gradient(legacy-direction(#ce4283), #b3455d);
+  background: linear-gradient(#ce4283, #b3455d);
+  color: #fff;
+  padding-top: 40px;
+  text-align: center;
+  position: relative;
+  height: 0;
+  transition: height cubic-bezier(0.05, 0.84, 0.3, 0.98) 0.5s;
+  -webkit-transition: height cubic-bezier(0.05, 0.84, 0.3, 0.98) 0.5s; }
+  .banner .logo {
+    position: absolute;
+    left: 40px;
+    max-width: 80px; }
+  .banner .poweredby {
+    position: absolute;
+    right: 40px; }
+  .banner .banner-img {
+    margin: auto;
+    height: 80%;
+    max-height: 500px;
+    position: relative;
+    margin-top: 5%; }
+  .banner .page-arrow {
+    animation: pagearrow 1s ease-in-out infinite;
+    -webkit-animation: pagearrow 1s ease-in-out infinite;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center; }
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes pagearrow {
+  0% {
+    bottom: 0px; }
+  50% {
+    bottom: 15px; }
+  100% {
+    bottom: 0px; } }
+
+/* Standard syntax */
+@keyframes pagearrow {
+  0% {
+    bottom: 0px; }
+  50% {
+    bottom: 15px; }
+  100% {
+    bottom: 0px; } }
+
+.search-section {
+  text-align: center;
+  background-color: #383a49; }
+  .search-section .search-input-container {
+    background-color: #333441;
+    padding: 20px 0; }
+    .search-section .search-input-container > .container > div {
+      height: 48px;
+      border-radius: 100px;
+      background-color: #fff;
+      margin: auto;
+      max-width: 500px;
+      width: 90%;
+      text-align: left;
+      padding: 0 120px 0 20px;
+      position: relative;
+      transition: all ease-in-out 0.25s;
+      -webkit-transition: all ease-in-out 0.25s; }
+      .search-section .search-input-container > .container > div input {
+        border: 0;
+        background-color: transparent;
+        font-size: 16px;
+        text-align: left;
+        direction: ltr;
+        padding: 13px 0;
+        color: #555;
+        width: 100%;
+        margin-top: 2px; }
+      .search-section .search-input-container > .container > div input:focus {
+        border: none !important; }
+      .search-section .search-input-container > .container > div button {
+        position: absolute;
+        right: 5px;
+        color: #fff;
+        background-color: #D05D84;
+        border: 0;
+        border-radius: 100px;
+        padding: 10px 25px;
+        top: 4px;
+        font-size: 16px;
+        text-transform: uppercase; }
+    .search-section .search-input-container > .container > div.small {
+      width: 0px;
+      padding-left: 4px; }
+      .search-section .search-input-container > .container > div.small input {
+        display: none; }
+  .search-section .search-results-container {
+    min-height: 300px; }
+    .search-section .search-results-container .empty {
+      color: #474958;
+      font-size: 22px;
+      padding: 50px; }
+      .search-section .search-results-container .empty img {
+        max-width: 150px; }
+    .search-section .search-results-container .container {
+      padding: 50px;
+      display: inline-block; }
+    .search-section .search-results-container .item-box {
+      float: left;
+      width: 320px;
+      height: 320px;
+      overflow: hidden;
+      margin: 20px;
+      position: relative;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px #222;
+      transition: all ease-in-out 0.25s;
+      -webkit-transition: all ease-in-out 0.25s; }
+      .search-section .search-results-container .item-box .image {
+        background: no-repeat center center #333441;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 40px;
+        transition: all ease-in-out 0.25s;
+        -webkit-transition: all ease-in-out 0.25s; }
+      .search-section .search-results-container .item-box .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(26, 16, 39, 0.45);
+        border-radius: 5px 5px 0 0;
+        opacity: 1;
+        transition: opacity ease-in-out 0.25s;
+        -webkit-transition: opacity ease-in-out 0.25s; }
+      .search-section .search-results-container .item-box .overlay-image {
+        opacity: 0;
+        transition: opacity ease-in-out 0.25s;
+        -webkit-transition: opacity ease-in-out 0.25s;
+        text-align: center;
+        color: #fff;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 40px;
+        padding-top: 70px;
+        background-color: rgba(0, 0, 0, 0.6);
+        font-family: RalewayMedium; }
+        .search-section .search-results-container .item-box .overlay-image img {
+          width: 120px; }
+      .search-section .search-results-container .item-box .title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background-color: #fff;
+        text-align: left;
+        font-family: RalewayMedium;
+        border-radius: 0 0 5px 5px; }
+        .search-section .search-results-container .item-box .title img {
+          position: absolute;
+          left: 10px;
+          top: -50px;
+          width: 35px;
+          opacity: 1;
+          transition: opacity ease-in-out 0.25s;
+          -webkit-transition: opacity ease-in-out 0.25s; }
+        .search-section .search-results-container .item-box .title img.album {
+          width: 50px; }
+    .search-section .search-results-container .item-box:hover {
+      border-radius: 40px;
+      cursor: pointer; }
+      .search-section .search-results-container .item-box:hover .image {
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px); }
+      .search-section .search-results-container .item-box:hover .overlay {
+        opacity: 0; }
+      .search-section .search-results-container .item-box:hover .overlay-image {
+        opacity: 1; }
+      .search-section .search-results-container .item-box:hover .title img {
+        opacity: 0; }
+    .search-section .search-results-container .view-more-button {
+      color: #fff;
+      background-color: #d05d84;
+      border: 0;
+      border-radius: 100px;
+      padding: 10px 25px;
+      font-size: 16px;
+      text-transform: uppercase; }
+
+.footer-section {
+  padding: 30px 0;
+  text-align: center;
+  color: #fff; }
+

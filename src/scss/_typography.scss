@@ -1,0 +1,16 @@
+﻿@font-face {
+    font-family: RalewayRegular;
+    src: url(../../assets/fonts/Raleway-Regular.ttf);
+}
+@font-face {
+    font-family: RalewayMedium;
+    src: url(../../assets/fonts/Raleway-Medium.ttf);
+}
+
+
+body,button,input {
+    font-family: RalewayRegular;
+}
+strong, h1, h2, h3, h4, h5, h6 {
+    font-family: RalewayMedium;
+}
