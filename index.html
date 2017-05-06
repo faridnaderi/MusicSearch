@@ -1,7 +1,78 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <title>Home of Music</title>
+    <!-- Google Fonts --> 
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
+    <!-- Fontawesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Main StyleSheet -->
+    <link href="assets/stylesheet.min.css" rel="stylesheet" />
+</head>
+
+<body ng-app="MusicSearchApp" ng-controller="AppCtrl" ng-class="{'input-focused':inputFocused}"> 
+    <section class="banner" ng-controller="BannerCtrl"> 
+        <div class="container">
+            <img class="logo fadeTo" src="assets/img/gl-logo@2x.png" />
+            <span class="poweredby fadeTo">Powered by Spotify</span>
+            <img class="banner-img fadeTo" src="assets/img/hero-img@2x.png" />
+            <br />
+            <div class="page-arrow fadeTo" ng-show="!inputFocused"><img src="assets/img/Page 1@2x.png" /></div>
+        </div>
+    </section>
+    <section class="search-section " ng-controller="SearchCtrl">
+        <div class="fadeIn vertical search-input-container ">
+            <div class="container">
+                <div class="small">
+                    <input type="text" ng-model="searchTerm" placeholder="Search for artist or album title" ng-focus="InputFocused()" />
+                    <button type="button" ng-click="Search()">Search</button>
+                </div>
+            </div>
+        </div>
+        <div ng-show="inputFocused">
+            <div class="search-results-container fadeIn vertical ">
+                <div class="empty" ng-show="!allData.length">
+                    <img src="assets/img/Magnify@2x.png" />
+                    <br />
+                    Your results will appear here
+                </div>
+                <div class="fadeIn container" ng-show="allData.length">
+                    <div class="item-box" ng-repeat="item in allData"> 
+                        <div class="image" style="background-image:url({{item.images[0].url}})"></div>
+                        <div class="overlay"></div>
+                        <div class="overlay-image">
+                            <img src="assets/img/Bitmap@2x.png" /><br />
+                            <span ng-show="item.type =='artist'">View Albums</span>
+                            <span ng-show="item.type =='album'">View Tracks</span>
+                        </div>
+                        <div class="title" >{{item.name}}<img src="assets/img/{{item.type}}-icon@2x.png" ng-class="{'album':item.type=='album'}" /></div>
+                    </div>
+                    <div style="clear:both"></div>
+                    <div style="text-align:center">
+                        <button class="view-more-button" ng-click="ViewMore()">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer-section" ng-show="inputFocused">
+        <div class="container">
+            Designed by Geek Label - Powered by Spotify
+        </div>
+    </section>
+    <!-- Jquery --> 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+    <!-- AngularJS  --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-sanitize.min.js"></script>      
+    <!-- Main Script --> 
+    <script src="assets/scripts.min.js"></script>
 </body>
 </html>
