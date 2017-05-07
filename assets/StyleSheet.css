@@ -101,6 +101,14 @@ background-color: #ce4283
   100% {
     bottom: 0px; } }
 
+@-webkit-keyframes pagearrow-lowheight {
+  0% {
+    bottom: -25px; }
+  50% {
+    bottom: -10px; }
+  100% {
+    bottom: -25px; } }
+
 /* Standard syntax */
 @keyframes pagearrow {
   0% {
@@ -109,6 +117,14 @@ background-color: #ce4283
     bottom: 15px; }
   100% {
     bottom: 0px; } }
+
+@keyframes pagearrow-lowheight {
+  0% {
+    bottom: -25px; }
+  50% {
+    bottom: -10px; }
+  100% {
+    bottom: -25px; } }
 
 @media (max-width: 736px) {
   .banner {
@@ -119,12 +135,12 @@ background-color: #ce4283
       max-width: 43px;
       top: -5px; }
     .banner .banner-img {
-      height: auto;
-      width: 70%;
-      margin-top: unset;
-      position: absolute;
-      bottom: 40%;
-      left: 18%; }
+      max-height: 300px;
+      /*width: 70%;
+            margin-top: unset;
+            position: absolute;
+            bottom: 40%;
+            left: 18%;*/ }
   .banner.small .banner-img {
     bottom: 20%; } }
 
@@ -133,6 +149,15 @@ background-color: #ce4283
     width: 90%;
     bottom: 40%;
     left: 6%; } }
+
+@media (max-height: 600px) {
+  .banner .page-arrow {
+    animation: pagearrow-lowheight 1s ease-in-out infinite;
+    -webkit-animation: pagearrow-lowheight 1s ease-in-out infinite; } }
+
+@media (max-height: 500px) {
+  .banner .page-arrow {
+    display: none !important; } }
 
 .search-section {
   text-align: center; }
