@@ -1,0 +1,161 @@
+﻿.modal {
+    background-color: rgba(72, 71, 83, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: none;
+    text-align: center;
+    overflow-y: auto;
+    padding-bottom: 200px;
+
+    .modal-box {
+        position: relative;
+        top: 15%;
+        margin: auto;
+        width: 90%;
+        max-width: 640px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 2px;
+        box-shadow: 2px 2px 20px #222;
+        text-align: left;
+        margin-bottom: 200px;
+        margin: 10px auto 200px;
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: no-repeat center center url(../../assets/img/Cross@2x.png);
+            background-size: cover;
+            cursor: pointer;
+        }
+         
+        .picture {
+            background: #2f2339 no-repeat;
+            height: 300px;
+            background-size: cover;
+            margin: -20px -20px 0;
+            border-radius: 2px 2px 0 0;
+            position: relative;
+            margin-bottom: 30px;
+
+
+            h1 {
+                text-align: left;
+                margin-top: -70px;
+                text-shadow: 1px 1px 5px #333;
+                color: #fff;
+                text-transform: capitalize;
+                padding-left: 20px;
+                position: absolute;
+                bottom: 0;
+
+                small {
+                    display: block
+                }
+            }
+        }
+
+        .picture-in-mobile {
+            display: none
+        }
+
+        hr {
+            margin: 10px 0;
+            border: none;
+            border-top: 1px solid #eee;
+        }
+
+        .list-item {
+            padding: 10px 0;
+
+            img {
+                float: left;
+                margin-right: 10px;
+                border-radius: 5px;
+                width: 80px
+            }
+
+            strong {
+                font-size: 22px;
+            }
+
+            span {
+                color: #999
+            }
+        }
+    }
+}
+
+@media (max-width:736px){
+    .modal .modal-box{
+        width:80%;
+        margin:auto;
+        top:5%;
+        margin-bottom:50px;
+    }
+}
+@media (max-width:400px) {
+    .modal .modal-box {
+        width: 80%;
+        margin: auto;
+        top: 5%;
+        margin-bottom: 50px;
+
+        > strong {
+            display: none
+        }
+
+        .picture {
+            display: none
+        }
+
+        .picture-in-mobile {
+            display: block;
+
+            .close-button {
+                width: 20px;
+                height: 20px;
+                background-image: url('../../assets/img/Cross Dark@2x.png');
+            }
+
+            h1 {
+                display: inline-block;
+                margin: 0;
+                font-size: 18px;
+                width: 100%;
+
+                small {
+                    color: #999;
+                    font-size: 16px;
+                }
+
+                .img {
+                    display:inline-block;
+                    float: left;
+                    margin-right: 10px;
+                    display: block;
+                    width: 70px;
+                    height: 70px;
+                    vertical-align: middle;
+                    background: #3e3050 no-repeat center center;
+                    background-size: cover;
+                }
+            }
+        }
+
+        .list-item strong {
+            font-size: 18px;
+        }
+
+        img {
+            display: none;
+        }
+    }
+}

@@ -68,3 +68,38 @@ background-color: #ce4283
     50% {bottom: 15px;}
     100% {bottom: 0px; }
 }
+@media (max-width:736px) {
+    .banner {
+        padding-top: 20px;
+
+        .poweredby {
+            font-size: 14px;
+        }
+
+        .logo {
+            max-width: 43px;
+            top: -5px;
+        }
+
+        .banner-img {
+            height: auto;
+            width: 70%;
+            margin-top: unset;
+            position: absolute;
+            bottom: 40%;
+            left: 18%;
+        }
+    }
+    .banner.small{
+        .banner-img{bottom:20%;}
+    }
+}
+@media (max-width:400px) {
+    .banner { 
+        .banner-img { 
+            width: 90%; 
+            bottom: 40%;
+            left: 6%;
+        }
+    } 
+}

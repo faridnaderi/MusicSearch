@@ -1,0 +1,35 @@
+﻿<div class="modal" ng-click="CloseModal($event);">
+    <div class="modal-box" ng-click="$event.stopPropagation();">
+
+        
+        <div class="picture" ng-style="{'background-image':'url('+(item.images[0].url ? item.images[0].url : 'assets/img/gl-logo@2x.png')+')','background-size':!item.images[0].url  ? ' 30%':'','background-position':!item.images[0].url  ? 'center center' :''}">
+            <div class="close-button"  ng-click="CloseModal($event);"></div>
+            <h1>
+                {{item.name}}
+                <small ng-if="item.type=='album'">by <strong>{{data.artists[0].name}}</strong></small>
+            </h1>
+        </div>
+
+        <div class="picture-in-mobile">
+            <div class="close-button" ng-click="CloseModal($event);"></div>
+            <h1>
+                <span class="img" ng-style="{'background-image':'url('+(item.images[0].url ? item.images[0].url : 'assets/img/gl-logo@2x.png')+')','background-size':!item.images[0].url  ? ' 30%':'','background-position':!item.images[0].url  ? 'center center' :''}"></span>
+                <small ng-if="item.type=='artist'">Albums by <br /></small>
+                <small ng-if="item.type=='album'">Tracks on <br /></small>
+                {{item.name}} 
+            </h1>
+        </div> 
+
+        <strong>{{item.type=='artist' ? 'Albums' : 'Tracks'}}</strong>
+        <hr />
+        <div ng-show="item.type=='album'" class="list-item" ng-repeat="track in data.tracks.items">
+            <strong ng-bind-html="track.name"></strong><br />
+            <span ng-bind-html="track.duration_ms | msToTrackTime"></span>
+        </div>
+        <div ng-show="item.type=='artist'" class="list-item" ng-repeat="album in data.items" style="display: inline-block;width: 100%;">
+            <img ng-src="{{album.images[1].url ? album.images[1].url : 'assets/img/gl-logo@2x.png'}}"  />
+            <strong ng-bind-html="album.name"></strong><br />
+            <span class="album-date"></span>
+        </div>
+    </div>
+</div>

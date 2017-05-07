@@ -6,3 +6,10 @@
     transition: $value;
     -webkit-transition: $value;
 }
+@mixin filter($value) {
+    -webkit-filter: $value;
+    -moz-filter: $value;
+    -o-filter: $value;
+    -ms-filter: $value;
+    filter: $value;
+}
