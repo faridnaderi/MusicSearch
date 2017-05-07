@@ -33,7 +33,7 @@ APP.controller('SearchCtrl', ['$scope', '$element', '$timeout', '$http', functio
     S.viewMoreShow = false;
     S.allData = [];
     S.oldSearchTerm = '';
-    S.searchTerm = 'girl';
+    S.searchTerm = '';
     Timeout(function () {
         $(E).find('.fadeIn').removeClass('vertical');
         Timeout(function () {
