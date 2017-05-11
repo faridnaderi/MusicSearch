@@ -17,6 +17,7 @@
 </head>
 
 <body ng-app="MusicSearchApp" ng-controller="AppCtrl" ng-class="{'input-focused':inputFocused}"> 
+    <!-- Banner starts -->
     <section class="banner" ng-controller="BannerCtrl"  ng-class="{'small':inputFocused}"> 
         <div class="container">
             <img class="logo fadeTo" src="assets/img/gl-logo@2x.png" />
@@ -24,36 +25,46 @@
             <img class="banner-img fadeTo" src="assets/img/hero-img@2x.png" />
             <br />
             <div class="page-arrow fadeTo" ng-show="!inputFocused"><img src="assets/img/Page 1@2x.png" /></div>
-        </div>
-    </section> 
+        </div> <!-- Container -->
+    </section>     
+    <!-- Banner ends -->
+
+    <!-- Search Area starts -->
     <section class="search-section " ng-controller="SearchCtrl">
         <div class="fadeIn vertical search-input-container ">
             <div class="container">
                 <div class="small"> 
                     <ul class="autocomplete">
+                        <!-- Auto complete item starts -->
                         <li ng-repeat="item in autocompleteList" ng-click="AutocompleteItemClicked(item.name)">
                             <img src="assets/img/Magnify@2x.png" class="magnify" />
                             <img class="icon" ng-src="{{item.images[0].url}}" /> 
                             <span ng-bind-html="item.name | SearchInText : searchTerm"></span>
                             <small>{{item.type}} <span ng-if="item.type=='album'">by <span ng-bind-html="item.artists[0].name | SearchInText : searchTerm"></span></span></small>
                         </li> 
+                        <!-- Auto complete item ends -->
                     </ul>
                     <div class="autocomplete-bg" ng-show="autocompleteOpen"></div>
                     <input type="text" ng-model="searchTerm" placeholder="Search for artist or album title" ng-change="InputChanging()" ng-focus="InputFocused()" ng-keypress="InputKeyPressed($event)" />
                     <button type="button" ng-click="Search()"><span class="fa fa-search"></span> <span class="searchTxt">Search</span></button>
                    
                 </div>
-            </div>
+            </div><!-- Container -->
         </div>
         <div style="background-color: #383a49;" ng-show="inputFocused">
             <div class="search-results-container fadeIn vertical ">
+                <!-- Show empty box in search Area -->
                 <div class="empty" ng-show="!allData.length">
                     <img src="assets/img/Magnify@2x.png" />
                     <br />
                     Your results will appear here
                 </div>
+
+                <!-- Show items in search Area -->
                 <div class="fadeIn container" ng-show="allData.length" style="position:relative;">
                     <div class="wrapper" style="position:relative;">
+
+                        <!-- Item start -->
                         <div class="item-box" ng-repeat="item in allData" ng-click="ItemClicked(item)">
                             <div class="image" ng-style="{'background-image':'url('+(item.images[0].url ? item.images[0].url : 'assets/img/gl-logo@2x.png')+')','background-size':!item.images[0].url  ? '30%' :''}"></div>
                             <div class="overlay"></div>
@@ -64,16 +75,20 @@
                             </div>
                             <div class="title"><span ng-bind-html="item.name | itemTitle"></span><img ng-src="assets/img/{{item.type}}-icon@2x.png" ng-class="{'album':item.type=='album'}" /></div>
                         </div>
+                        <!-- Item ends -->
+
                         <div style="clear:both"></div>
                         <div style="text-align:center">
                             <button class="view-more-button" ng-show="viewMoreShow" ng-click="ViewMore()">Show me more</button>
                         </div>
-                    </div>
-
-                </div>
+                    </div> 
+                </div><!-- Container -->
             </div>
         </div>
-    </section>
+    </section>    
+    <!-- Search Area ends -->
+
+    <!-- Use to show modal for selected item details -->
     <details-modal></details-modal>
     <section class="footer-section " ng-class="{'fixed':!inputFocused}">
         <div class="container">

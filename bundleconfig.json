@@ -2,7 +2,10 @@
   {
     "outputFileName": "assets/scripts.min.js",
     "inputFiles": [
-      "src/scripts.js"
+      "src/scripts.js",
+      "src/js/filters.js",
+      "src/js/directives/*",
+      "src/js/controllers/*"
     ]
   }
 ]
