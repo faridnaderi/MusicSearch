@@ -13,10 +13,12 @@ APP.filter('SearchInText', function () {
 // minuts and seconds..
 APP.filter('msToTrackTime', function () {
     return function (input) {
-        var time = new Date(input);
+        var time = new Date(0,0,0,0,0,0,input); 
         var s = time.getSeconds();
         if (s < 10) s = '0' + s;
         var m = time.getMinutes();
+        var h = time.getHours();
+        if (h) m += h * 60;
 
         return m + ':' + s;
     };
@@ -26,7 +28,7 @@ APP.filter('msToTrackTime', function () {
 // then it will sub str the input and add "..." and returns it.
 APP.filter('itemTitle', function () {
     return function (input) {
-        var maxlength = $(window).width > 400 ? 32 : 16;
+        var maxlength = $(window).width() > 400 ? 32 : 16; 
         if (input.length > maxlength)
             input = input.slice(0, maxlength) + '...';
         return input;

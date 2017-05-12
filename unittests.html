@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/src/jasmine/jasmine_favicon.png">
+    <title>Home of Music | Unit Tests</title> 
+
+    <link rel="shortcut icon" type="image/png" href="src/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="src/jasmine/jasmine.css">
+</head>
+<body ng-app="MusicSearchApp"  >
+     
+    <!-- Jasmine -->
+    <script type="text/javascript" src="src/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="src/jasmine/jasmine-html.js"></script>
+    <script type="text/javascript" src="src/jasmine/boot.js"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- AngularJS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-mocks.js"></script>
+    <!-- Main Script -->
+    <script src="assets/scripts.min.js"></script>  
+    <script type="text/javascript"> 
+
+        describe('msToTrackTime is a filter to converts miliseconds into minutes:seconds for track times', function () {
+
+            'use strict';
+
+            var $filter;
+
+            beforeEach(function () {
+                module('MusicSearchApp');
+
+                inject(function (_$filter_) {
+                    $filter = _$filter_;
+                });
+            });
+
+
+            it('returns 0:00 when given null', function () {
+                var msToTrackTime = $filter('msToTrackTime');
+                expect(msToTrackTime(null)).toEqual('0:00');
+            });
+
+            it('returns 0:00 when given 0', function () {
+                var msToTrackTime = $filter('msToTrackTime');
+                expect(msToTrackTime(0)).toEqual('0:00');
+            }); 
+            var tests = [
+                [85, '1:25'],
+                [120, '2:00'], 
+                [300, '5:00'],
+                [420, '7:00'],
+                [231, '3:51'],
+                [541, '9:01'],
+                [2541, '42:21'],
+                [5999, '99:59']
+            ]
+            tests.map(function(test){
+                it('returns ' + test[1] + ' when given ' + test[0]+' * 1000', function () {
+                    var msToTrackTime = $filter('msToTrackTime');
+                    expect(msToTrackTime(test[0] * 1000)).toEqual(test[1]);
+                });
+            })
+        });
+
+        describe('itemTitle is a filter to add "..." to the title if its too long for the container', function () {
+
+            'use strict';
+
+            var $filter;
+
+            beforeEach(function () {
+                module('MusicSearchApp');
+
+                inject(function (_$filter_) {
+                    $filter = _$filter_;
+                });
+            });
+
+
+            it('returns with "..." when given long string like "a long title for a song, album or artist"', function () {
+                var itemTitle = $filter('itemTitle');
+                expect(itemTitle('a long title for a song, album or artist')).toContain('...');
+            });
+            it('returns original input when given short string like "a short title title" in screen width > 400', function () {
+                var itemTitle = $filter('itemTitle');
+                expect(itemTitle('a short title title')).toEqual('a short title title');
+            });
+            it('returns original input when given short string like "a short title" in all screens width', function () {
+                var itemTitle = $filter('itemTitle');
+                expect(itemTitle('a short title')).toEqual('a short title');
+            });
+        });
+    </script>
+</body>
+</html>
