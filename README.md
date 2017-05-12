@@ -12,6 +12,9 @@ The requested tasks are :
 * The site must work fine with the latest version of Chrome, Firefox, Safari, Microsoft Edge and IE11
 * Include a README file in which you explain your solution
  
+## Unit Test
+I used Jasmine for unit test hope its okay! Kindely please browse [Unit-Tests page](https://faridnaderi.github.io/unittests.html)
+
 ## Application struction
 The project is not large therefore i ended up with following structure
 
