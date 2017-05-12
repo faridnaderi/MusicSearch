@@ -15,6 +15,23 @@ The requested tasks are :
 ## Unit Test
 I used Jasmine for unit test hope its okay! Kindely please browse [Unit-Tests page](https://faridnaderi.github.io/unittests.html)
 
+## Build Procces
+#### SCSS
+To build or compile SCSS files into one minified CSS file you only need to compile 
+```
+SRC > StyleSheet.scss
+```
+with any SCSS compiler as it has all other files imported, it should compile all.
+#### JavaScripts
+To minify and combine all JS files I used Visual Studio extension called [Bundler & Minifier](https://github.com/madskristensen/BundlerMinifier)
+The order of files should follow this 
+```
+	1 src/scripts.js
+    2 src/js/filters.js
+    3 src/js/directives/*.js
+    4 src/js/controllers/*.js
+```
+
 ## Application struction
 The project is not large therefore i ended up with following structure
 
