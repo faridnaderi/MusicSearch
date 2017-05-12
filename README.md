@@ -15,18 +15,28 @@ The requested tasks are :
 ## Application struction
 The project is not large therefore i ended up with following structure
 
+#### Assets
+folder contains compiled and minified CSS and JS files as well as fonts and images
 ```
 Assets
 ----| Images
 ----| Fonts
 ----| Scripts.min.js
 ----| StyleSheet.min.css
+```
+#### Views
+This folder contains other html files required by directives .
+```
 Views
 ----| details-modal.html
+```
+#### Source 
+Source folder contains all the SCSS and JS before compiling and minifying . this folder does not require to be uploaded to the production host.
+```
 Src ( holds all SCSS and JS source files )
 ----| JS
 ---------| Directives
----------| details_modal_directive.js
+--------------| details_modal_directive.js
 ---------| Controllers
 --------------| banner_ctrl.js
 --------------| search_ctrl.js
@@ -41,6 +51,10 @@ Src ( holds all SCSS and JS source files )
 ---------| _typography.scss
 ----| scripts.js
 ----| stylesheet.css
+```
+#### Root
+These files are in root folder , Boundleconfig and Compilerconfig both are config files for Visual Studio free plugins to compile SCSS and minify SCSS and JS into one file. 
+```
 bundleconfig.json ( Uses to minify javascripts into one file )
 compilerconfig.json ( Uses to minify and compile SCSS files to one css file )
 index.html
