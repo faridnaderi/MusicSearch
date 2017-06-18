@@ -1,5 +1,6 @@
 # Music Search, Sample front-end work
 Music search : is a sample website that gives me opportunity to give better understanding about my skills to Compucorp.
+Browse : https://faridnaderi.github.io/MusicSearch/index.html
 
 The requested tasks are :
 
@@ -13,7 +14,7 @@ The requested tasks are :
 * Include a README file in which you explain your solution
  
 ## Unit Test
-I used Jasmine for unit test hope its okay! Kindely please browse [Unit-Tests page](https://faridnaderi.github.io/unittests.html)
+I used Jasmine for unit test hope its okay! Kindely please browse [Unit-Tests page](https://faridnaderi.github.io/MusicSearch/unittests.html)
 
 ## Build Procces
 #### SCSS
